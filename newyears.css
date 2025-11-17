@@ -1,0 +1,141 @@
+/* ==================== RESET ==================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ==================== BODY ==================== */
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    position: relative;
+}
+
+/* ==================== MAIN CONTAINER ==================== */
+.container {
+    text-align: center;
+    z-index: 10;
+    position: relative;
+}
+
+/* Heading */
+h1 {
+    font-size: 4rem;
+    color: #fff;
+    text-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+    margin-bottom: 20px;
+    animation: glow 2s ease-in-out infinite;
+}
+
+/* Year */
+.year {
+    font-size: 6rem;
+    font-weight: bold;
+    color: #ffd700;
+    text-shadow: 0 0 30px rgba(255, 215, 0, 0.8);
+    animation: bounce 1s ease-in-out infinite;
+}
+
+/* Message */
+.message {
+    font-size: 1.5rem;
+    color: #fff;
+    margin-top: 30px;
+    opacity: 0;
+    animation: fadeIn 2s ease-in 1s forwards;
+}
+
+/* Button */
+.surprise-btn {
+    margin-top: 40px;
+    padding: 15px 40px;
+    font-size: 1.2rem;
+    background: linear-gradient(45deg, #ff6b6b, #feca57);
+    border: none;
+    border-radius: 50px;
+    color: white;
+    cursor: pointer;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease;
+    opacity: 0;
+    animation: fadeIn 2s ease-in 2s forwards;
+}
+
+.surprise-btn:hover {
+    transform: scale(1.1);
+}
+
+/* Fireworks */
+.firework {
+    position: absolute;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    animation: explode 1s ease-out forwards;
+}
+
+/* Confetti */
+.confetti {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background: #ffd700;
+    animation: fall 3s linear forwards;
+}
+
+/* Celebration message */
+.celebration {
+    font-size: 2rem;
+    color: #ffd700;
+    margin-top: 20px;
+    animation: pulse 0.5s ease-in-out infinite;
+}
+
+.hidden {
+    display: none;
+}
+
+/* ==================== ANIMATIONS ==================== */
+
+@keyframes glow {
+    0%, 100% {
+        text-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+    }
+    50% {
+        text-shadow: 0 0 40px rgba(255, 255, 255, 0.9);
+    }
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+}
+
+@keyframes fadeIn {
+    to { opacity: 1; }
+}
+
+@keyframes explode {
+    to {
+        transform: translate(var(--tx), var(--ty));
+        opacity: 0;
+    }
+}
+
+@keyframes fall {
+    to {
+        transform: translateY(100vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+}
